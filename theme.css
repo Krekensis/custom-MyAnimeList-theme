@@ -8,7 +8,7 @@ body {
     background-color: black;
     background-image: 
         url(https://imgur.com/FVsZt3g.png), /* PNG VECTOR - Gintoki */ 
-         url(https://imgur.com/jj9N7yt.jpeg); /* BACKGROUND - Kabuki District */
+        url(https://imgur.com/jj9N7yt.jpeg); /* BACKGROUND - Kabuki District */
     background-position: 28% calc(90% + 10px), bottom center;
     background-size: 28%, cover;
     background-attachment: fixed;
