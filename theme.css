@@ -1,0 +1,332 @@
+
+@\import "https://malscraper.azurewebsites.net/covers/anime/Yokubou_26/presets/more";
+@\import "https://fonts.googleapis.com/css2?family=Oswald&family=Roboto+Condensed&family=Montserrat:wght@900&family=Roboto+Mono";
+@\import "https://yuiafterdark.github.io/shared/fixes/classic.css";
+
+/* BACKGROUND */
+body {
+    background-color: black;
+    background-image: 
+        url(https://imgur.com/FVsZt3g.png), /* PNG VECTOR - Gintoki */ 
+         url(https://imgur.com/jj9N7yt.jpeg); /* BACKGROUND - Kabuki District */
+    background-position: 28% calc(90% + 10px), bottom center;
+    background-size: 28%, cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font: 14px Roboto Condensed;
+    color: #eee;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* USERNAME */
+[data-owner="1"] #list_surround:after {
+    content: "Yokubou";
+    display: block;
+}
+
+/* USERNAME STYLES */
+[data-owner=""] #mal_cs_otherlinks div:first-child a, #list_surround:after {
+    content: "Yokubou" !important;
+    position: fixed;
+    top: 0%;
+    left: 3%;
+    font: bold 90px Oswald !important;
+    color: rgba(55, 171, 161) !important;
+    margin: 0;
+    text-transform: none !important;
+    transition: .3s all ease-in-out;
+    z-index: 999 !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* ALL LINKS | AIRING/REWATCHING STATUS ON HOVER */
+   a, a:visited, a:active, tr:hover a + small {
+    color: #eee;
+    text-decoration: none;}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* LIST TABLE */
+  #list_surround {
+    width: 40%;
+    margin: auto;
+    position: relative;
+    left: 22%;}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* LIST TABLE ROW */
+  .td1, .td2 {
+    height: 25px;}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* STATUS HEADER */
+  .header_title span {
+    font: bold 17px Oswald;
+    color: rgba(55, 171, 161) !important;
+    text-transform: uppercase;
+    line-height: 3em;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(55, 171, 161);}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* ANIME TITLES */
+  .animetitle {
+    color: rgba(240, 240, 240, 0.85) !important;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+
+  @media screen and (min-width: 1600px) {
+  .animetitle {
+    color: rgba(240, 240, 240, 0.85) !important;
+    max-width: 85%;}}
+
+  @media screen and (min-width: 1400px) and (max-width: 1550px) {
+  .animetitle {
+    color: rgba(240, 240, 240, 0.85) !important;
+    max-width: 330px;}}
+
+  @media screen and (min-width: 1200px) and (max-width: 1350px) {
+  .animetitle {
+    color: rgba(240, 240, 240, 0.85) !important;
+    max-width: 250px;}}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* TITLE BACKGROUND ON HOVER */
+  [class^=td]:first-child:before {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 22px;
+    background: #4c73c2;
+    position: absolute;
+    margin-top: -3px;
+    z-index: -1;
+    transition: width .2s ease-in-out;}
+
+/* DISPLAYING TITLE BACKGROUND */
+  tr:hover [class^=td]:first-child:before {
+    width: 100%;}
+
+/* NON-LINK TEXT ON HOVER */
+  tr:hover [class^=td], tr:hover .animetitle {
+    color: white !important;}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* AIRING/REWATCHING STATUS */
+  a + small {
+    position: absolute;
+    margin: 0px 5px;
+    font: 10px Oswald;
+    color: #c7dce5;
+    text-transform: uppercase;
+    opacity: 1;
+    transition: opacity .2s ease-in-out;}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* EDIT ICON */
+  small .List_LightBox:before {
+    font: 15px FontAwesome;
+    content: '\f141';
+    color: #999;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    position: relative;
+    left: -30px;}
+
+/* DISPLAYING EDIT ICON | DISPLAYING STATIC GLITCH */
+  tr:hover small .List_LightBox:before, table:hover + .hide:after {
+    opacity: 1;}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* STATUS MENU */
+  br:first-child + table {
+    position: fixed;
+    left: 0;
+    top: 25%;
+    width: auto;}
+
+/* STATUS LINKS */
+  [class^=status] {
+    display: block;
+    width: auto;
+    font: 13px Oswald;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 10px 0;}
+
+/* LINES IN BETWEEN STATUS LINKS  */
+  br:first-child + table:before {
+    content: '';
+    width: 7px;
+    height: 220px;
+    position: absolute;}
+
+/* LINES BEFORE ALL STATUS LINKS*/
+  [class^=status]:before {
+    content: '—';
+    font-size: 17px;
+    color: #eee;
+    margin-right: 3px;
+    position: relative;
+    z-index: 1;}
+
+/* LINE BEFORE SELECTED STATUS LINK */
+  .status_selected:before {
+    content: '——';}
+
+/* STATUS LINKS ON HOVER */
+  .status_selected:before, .status_not_selected:hover:before, .status_not_selected a:hover {
+    color: #6b90db;}
+
+/* SELECTED STATUS LINK | MENU LINKS ON HOVER */
+  .status_selected a, #mal_control_strip a:hover {
+    color: #6b90db !important;}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* NAVIGATION MENU */
+  #mal_control_strip {
+    position: fixed;
+    background: none !important;
+    left: unset !important;
+    top: 15px;
+    right: 15px;
+    width: auto !important;
+    height: 13px !important;
+    overflow: hidden;
+    display: block;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+    text-align: right;}
+
+/* MENU LABEL */
+  [data-owner="1"] #mal_control_strip:before {
+    content: 'MENU';
+    font: 10px Oswald;}
+
+/* DISPLAYING MENU LINKS */
+  #mal_control_strip:hover {
+    height: 190px !important;}
+
+/* MENU SECTIONS */
+  #mal_control_strip td,
+  #mal_control_strip td div {
+    display: inline;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0;
+    text-align: right;}
+
+/* MENU LINKS */
+  #mal_control_strip a {
+    display: block;
+    font: 10px Oswald !important;
+    color: #999 !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    margin: 3px 0;}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* ANIME COVERS */
+  .hide {
+    display: block !important;
+    background-size: 150px 100%;
+    background-position: center;
+    position: absolute;
+    left: -170px;
+    margin-top: -50px;
+    width: 150px;
+    height: 200px;
+    opacity: 0;
+    z-index: -1;
+    transition: all .5s ease-in-out;}
+
+/* petal effect */ 
+  .hide:after {
+    transition: all .5s ease-in-out;
+    content: '';
+    mix-blend-mode: lighten;
+    position: absolute;
+    left: -0px;
+    margin-top: 0px;
+    width: 150px;
+    height: 200px;
+    opacity: 0;
+    background: center/cover url(https://imgur.com/XtFhAw6.gif);}  /* cherry blossom gif */
+
+/* DISPLAYING COVERS */
+  table:hover + .hide {
+    opacity: 0.75}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* REVIEW/COMMENT POSITION */
+  [width='125'] {
+    position: absolute;
+    width: 16px;
+    margin-left: -190px;}
+
+  /* REVIEW/COMMENT ON HOVER */
+  [id^=tagRow] {
+    display: block !important;
+    width: 140px;
+    height: 0;
+    overflow: hidden;
+    background: rgba(0,0,0,.8);
+    color: #eee;
+    font: 10px Roboto Mono;
+    line-height: 1.25em;
+    box-shadow: 0 0 4px rgba(0,0,0,.4);
+    transition: all .1s ease-in-out;
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    z-index: 1;}
+
+/* REVIEW/COMMENT ICON */
+  [id^=tagLinks]:not(:empty):before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: center/cover url(https://i.imgur.com/gnzkX7o.png) /* tags.png */;
+    margin-top: 5px;}
+
+/* DISPLAYING REVIEW/COMMENTS */
+  [id^=tagLinks]:hover + [id^=tagRow], [id^=tagRow]:hover {
+    width: 140px;
+    height: auto;
+    padding: 10px;
+    border: 1px dotted #999;}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* HIDING TEXT */
+  #mal_cs_powered, [data-owner=""] #mal_control_strip td:not(#mal_cs_otherlinks),
+  [data-owner=""] #mal_cs_otherlinks div:last-child, [data-owner=""] [class^=td] div[style], small [onClick],
+  .table_header[width='125'], [id^=tagChangeRow], [id^=tagLinks] a, #grand_totals {
+    display: none !important;}
+
+  #mal_cs_otherlinks div:first-child, div[style] small, [id^=tagLinks] {
+    font-size: 0;}
+
+  [data-owner=""] #mal_control_strip td {
+    height: 0;}
+
+  .category_totals {
+    visibility: hidden;}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
